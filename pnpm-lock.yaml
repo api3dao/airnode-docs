@@ -30,8 +30,8 @@ importers:
         specifier: ^0.2.2
         version: 0.2.2
       flexsearch:
-        specifier: ~0.7.43
-        version: 0.7.43
+        specifier: ~0.8.149
+        version: 0.8.151
       fs-extra:
         specifier: ^11.3.0
         version: 11.3.0
@@ -752,8 +752,8 @@ packages:
   file@0.2.2:
     resolution: {integrity: sha512-gwabMtChzdnpDJdPEpz8Vr/PX0pU85KailuPV71Zw/un5yJVKvzukhB3qf6O3lnTwIe5CxlMYLh3jOK3w5xrLA==}
 
-  flexsearch@0.7.43:
-    resolution: {integrity: sha512-c5o/+Um8aqCSOXGcZoqZOm+NqtVwNsvVpWv6lfmSclU954O3wvQKxxK8zj74fPaSJbXpSLTs4PRhh+wnoCXnKg==}
+  flexsearch@0.8.151:
+    resolution: {integrity: sha512-bMI/vDndsaldfmOLKGk5HMYSiXhX1sBiD/ENZKAnsQJaqC/yk51aTy0+Ny2hYcu+Utazy3s8NZA/zbh2o88ctQ==}
 
   focus-trap@7.6.1:
     resolution: {integrity: sha512-nB8y4nQl8PshahLpGKZOq1sb0xrMVFSn6at7u/qOsBZTlZRzaapISGENcB6mOkoezbClZyiMwEF/dGY8AZ00rA==}
@@ -1840,7 +1840,7 @@ snapshots:
 
   file@0.2.2: {}
 
-  flexsearch@0.7.43: {}
+  flexsearch@0.8.151: {}
 
   focus-trap@7.6.1:
     dependencies:
