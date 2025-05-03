@@ -28,6 +28,13 @@
 import { AbiCoder } from 'ethers';
 const abiCoder = new AbiCoder();
 
+/*
+Input example:
+0x000000000000000000000000000000000000000000000000000000000000007b00000000000000000000000000000000000000000000000000000000000001c8
+
+Output:
+123,456
+*/
 export default {
   name: 'EthersAbiCoder',
   props: ['types'],
