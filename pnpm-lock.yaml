@@ -21,11 +21,11 @@ importers:
         specifier: ^1.4.0
         version: 1.4.0
       diff:
-        specifier: ^8.0.1
-        version: 8.0.1
+        specifier: ^8.0.2
+        version: 8.0.2
       ethers:
-        specifier: ^6.14.1
-        version: 6.14.1
+        specifier: ^6.14.3
+        version: 6.14.3
       file:
         specifier: ^0.2.2
         version: 0.2.2
@@ -691,8 +691,8 @@ packages:
   devlop@1.1.0:
     resolution: {integrity: sha512-RWmIqhcFf1lRYBvNmr7qTNuyCt/7/ns2jbpp1+PalgE/rDQcBT0fioSMUpJ93irlUhC5hrg4cYqe6U+0ImW0rA==}
 
-  diff@8.0.1:
-    resolution: {integrity: sha512-rEaM3KmVm78zE3dFZaop3aCQa2MTm+T4kcigUFLVU/KbOYdiY6JnL2g2puOYnct3QFw9pjZadaCbCZ1O8ArMlQ==}
+  diff@8.0.2:
+    resolution: {integrity: sha512-sSuxWU5j5SR9QQji/o2qMvqRNYRDOcBTgsJ/DeCf4iSN4gW+gNMXM7wFIP+fdXZxoNiAnHUTGjCr+TSWXdRDKg==}
     engines: {node: '>=0.3.1'}
 
   dom-serializer@2.0.0:
@@ -738,8 +738,8 @@ packages:
   estree-walker@2.0.2:
     resolution: {integrity: sha512-Rfkk/Mp/DL7JVje3u18FxFujQlTNR2q6QfMSMB7AvCBx91NGj/ba3kCfza0f6dVDbw7YlRf/nDrn7pQrCCyQ/w==}
 
-  ethers@6.14.1:
-    resolution: {integrity: sha512-JnFiPFi3sK2Z6y7jZ3qrafDMwiXmU+6cNZ0M+kPq+mTy9skqEzwqAdFW3nb/em2xjlIVXX6Lz8ID6i3LmS4+fQ==}
+  ethers@6.14.3:
+    resolution: {integrity: sha512-qq7ft/oCJohoTcsNPFaXSQUm457MA5iWqkf1Mb11ujONdg7jBI6sAOrHaTi3j0CBqIGFSCeR/RMc+qwRRub7IA==}
     engines: {node: '>=14.0.0'}
 
   eventemitter3@5.0.1:
@@ -1752,7 +1752,7 @@ snapshots:
     dependencies:
       dequal: 2.0.3
 
-  diff@8.0.1: {}
+  diff@8.0.2: {}
 
   dom-serializer@2.0.0:
     dependencies:
@@ -1819,7 +1819,7 @@ snapshots:
 
   estree-walker@2.0.2: {}
 
-  ethers@6.14.1:
+  ethers@6.14.3:
     dependencies:
       '@adraffy/ens-normalize': 1.10.1
       '@noble/curves': 1.2.0
