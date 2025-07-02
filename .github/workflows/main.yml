@@ -1,0 +1,41 @@
+name: Lint and validate links
+
+on:
+  pull_request:
+    branches:
+      - main
+
+jobs:
+  build-and-validate:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Clone repo
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Install pnpm
+        uses: pnpm/action-setup@v4
+
+      - name: Setup Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: '22.17.0'
+          cache: 'pnpm'
+
+      - run: pnpm install
+
+      - name: Lint
+        run: |
+          pnpm format:check
+
+      - name: Build documentation
+        run: |
+          pnpm docs:build
+
+      # - name: Serve docs and check links
+      #   run: |
+      #     pnpm docs:serve &
+      #     sleep 10 # Wait for the server to start
+      #     node ./libs/link-validator.js http://localhost:8082 ./docs/.vitepress/dist/
