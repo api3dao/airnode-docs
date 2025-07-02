@@ -35,7 +35,6 @@ Security schemes are declared by the required `type` property inside the
 security scheme definition. The following security scheme types are supported.
 
 - Airnode Authentication Security Schemes
-
   - apiKey
   - http
 
