@@ -24,8 +24,8 @@ importers:
         specifier: ^8.0.2
         version: 8.0.2
       ethers:
-        specifier: ^6.14.4
-        version: 6.14.4
+        specifier: ^6.15.0
+        version: 6.15.0
       file:
         specifier: ^0.2.2
         version: 0.2.2
@@ -738,8 +738,8 @@ packages:
   estree-walker@2.0.2:
     resolution: {integrity: sha512-Rfkk/Mp/DL7JVje3u18FxFujQlTNR2q6QfMSMB7AvCBx91NGj/ba3kCfza0f6dVDbw7YlRf/nDrn7pQrCCyQ/w==}
 
-  ethers@6.14.4:
-    resolution: {integrity: sha512-Jm/dzRs2Z9iBrT6e9TvGxyb5YVKAPLlpna7hjxH7KH/++DSh2T/JVmQUv7iHI5E55hDbp/gEVvstWYXVxXFzsA==}
+  ethers@6.15.0:
+    resolution: {integrity: sha512-Kf/3ZW54L4UT0pZtsY/rf+EkBU7Qi5nnhonjUb8yTXcxH3cdcWrV2cRyk0Xk/4jK6OoHhxxZHriyhje20If2hQ==}
     engines: {node: '>=14.0.0'}
 
   eventemitter3@5.0.1:
@@ -1819,7 +1819,7 @@ snapshots:
 
   estree-walker@2.0.2: {}
 
-  ethers@6.14.4:
+  ethers@6.15.0:
     dependencies:
       '@adraffy/ens-normalize': 1.10.1
       '@noble/curves': 1.2.0
