@@ -1,40 +1,5 @@
 {
   "$schema": "https://docs.renovatebot.com/renovate-schema.json",
-  "extends": ["config:base"],
-  "packageRules": [
-    {
-      "matchPackageNames": ["node", "flexsearch", "actions/node-versions"],
-      "enabled": false
-    },
-    {
-      "matchDepTypes": ["packageManager"],
-      "matchPackageNames": ["pnpm"],
-      "extends": ["schedule:quarterly"]
-    },
-    {
-      "matchPackageNames": ["vitepress"],
-      "groupName": "vitepress"
-    },
-    {
-      "matchDepTypes": ["devDependencies"],
-      "excludePackageNames": ["vitepress"],
-      "matchUpdateTypes": ["patch", "minor"],
-      "schedule": ["before 4am on Monday"],
-      "groupName": "non-major-dev-dependencies"
-    },
-    {
-      "matchDepTypes": ["dependencies"],
-      "excludePackageNames": ["vitepress"],
-      "matchUpdateTypes": ["patch", "minor"],
-      "schedule": ["before 4am on Monday"],
-      "groupName": "non-major-dependencies"
-    }
-  ],
-  "rangeStrategy": "bump",
-  "lockFileMaintenance": {
-    "enabled": false
-  },
-  "reviewers": ["dcroote", "wkande"],
-  "minimumReleaseAge": "5 days",
-  "dependencyDashboard": false
+  "extends": ["local>api3dao/renovate-config"],
+  "reviewers": ["dcroote"]
 }
