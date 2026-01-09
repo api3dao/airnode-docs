@@ -3,7 +3,10 @@
   "version": "1.0.0",
   "main": "index.js",
   "license": "MIT",
-  "packageManager": "pnpm@9.15.9",
+  "packageManager": "pnpm@10.26.2",
+  "engines": {
+    "pnpm": "^10.26.2"
+  },
   "scripts": {
     "sync:VPFlyout": "cp docs/_components/vitepress/VPFlyout.vue  node_modules/vitepress/dist/client/theme-default/components/VPFlyout.vue",
     "sync:VPNavBarTitle": "cp docs/_components/vitepress/VPNavBarTitle.vue  node_modules/vitepress/dist/client/theme-default/components/VPNavBarTitle.vue",
@@ -39,7 +42,7 @@
     "oust": "^2.0.4",
     "prettier": "^3.7.4",
     "tiny-emitter": "^2.1.0",
-    "vitepress": "1.3.2",
+    "vitepress": "1.6.4",
     "walk-sync": "^4.0.1"
   }
 }
