@@ -179,19 +179,11 @@ export default {
       });
 
       // flexsearch 0.8.x uses different export format: 1.map.json, 1.reg.json
+      // Use relative paths - works for dev, serve, and production since files are in public/
       let mapData, regData;
       // console.log('buildIndex() MODE', import.meta.env.MODE);
-      if (import.meta.env.MODE === 'development') {
-        mapData = await axios.get(`/indexes/${name}/1.map.json`);
-        regData = await axios.get(`/indexes/${name}/1.reg.json`);
-      } else {
-        mapData = await axios.get(
-          `https://raw.githubusercontent.com/api3dao/airnode-docs/main/docs/public/indexes/${name}/1.map.json`
-        );
-        regData = await axios.get(
-          `https://raw.githubusercontent.com/api3dao/airnode-docs/main/docs/public/indexes/${name}/1.reg.json`
-        );
-      }
+      mapData = await axios.get(`/indexes/${name}/1.map.json`);
+      regData = await axios.get(`/indexes/${name}/1.reg.json`);
 
       this.index.import('1.map', mapData.data);
       this.index.import('1.reg', regData.data);
