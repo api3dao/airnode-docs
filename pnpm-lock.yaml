@@ -30,8 +30,8 @@ importers:
         specifier: ^0.2.2
         version: 0.2.2
       flexsearch:
-        specifier: ~0.7.43
-        version: 0.7.43
+        specifier: ~0.8.212
+        version: 0.8.212
       fs-extra:
         specifier: ^11.3.3
         version: 11.3.3
@@ -54,8 +54,8 @@ importers:
         specifier: ^2.0.4
         version: 2.0.4
       prettier:
-        specifier: ^3.7.4
-        version: 3.7.4
+        specifier: ^3.8.1
+        version: 3.8.1
       tiny-emitter:
         specifier: ^2.1.0
         version: 2.1.0
@@ -819,8 +819,8 @@ packages:
   file@0.2.2:
     resolution: {integrity: sha512-gwabMtChzdnpDJdPEpz8Vr/PX0pU85KailuPV71Zw/un5yJVKvzukhB3qf6O3lnTwIe5CxlMYLh3jOK3w5xrLA==}
 
-  flexsearch@0.7.43:
-    resolution: {integrity: sha512-c5o/+Um8aqCSOXGcZoqZOm+NqtVwNsvVpWv6lfmSclU954O3wvQKxxK8zj74fPaSJbXpSLTs4PRhh+wnoCXnKg==}
+  flexsearch@0.8.212:
+    resolution: {integrity: sha512-wSyJr1GUWoOOIISRu+X2IXiOcVfg9qqBRyCPRUdLMIGJqPzMo+jMRlvE83t14v1j0dRMEaBbER/adQjp6Du2pw==}
 
   focus-trap@7.7.0:
     resolution: {integrity: sha512-DJJDHpEgoSbP8ZE1MNeU2IzCpfFyFdNZZRilqmfH2XiQsPK6PtD8AfJqWzEBudUQB2yHwZc5iq54rjTaGQ+ljw==}
@@ -1053,8 +1053,8 @@ packages:
   preact@10.24.3:
     resolution: {integrity: sha512-Z2dPnBnMUfyQfSQ+GBdsGa16hz35YmLmtTLhM169uW944hYL6xzTYkJjC07j+Wosz733pMWx0fgON3JNw1jJQA==}
 
-  prettier@3.7.4:
-    resolution: {integrity: sha512-v6UNi1+3hSlVvv8fSaoUbggEM5VErKmmpGA7Pl3HF8V6uKY7rvClBOJlH6yNwQtfTueNkGVpOv/mtWL9L4bgRA==}
+  prettier@3.8.1:
+    resolution: {integrity: sha512-UOnG6LftzbdaHZcKoPFtOcCKztrQ57WkHDeRD9t/PTQtmT0NHSeWWepj6pS0z/N7+08BHFDQVUrfmfMRcZwbMg==}
     engines: {node: '>=14'}
     hasBin: true
 
@@ -2005,7 +2005,7 @@ snapshots:
 
   file@0.2.2: {}
 
-  flexsearch@0.7.43: {}
+  flexsearch@0.8.212: {}
 
   focus-trap@7.7.0:
     dependencies:
@@ -2269,7 +2269,7 @@ snapshots:
 
   preact@10.24.3: {}
 
-  prettier@3.7.4: {}
+  prettier@3.8.1: {}
 
   property-information@7.1.0: {}
 
