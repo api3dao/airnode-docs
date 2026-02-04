@@ -114,11 +114,7 @@ export default {
       // Store the search words into localStorage
       localStorage.setItem('search-words', val.toLowerCase());
       this.sendEvent();
-      let ids = this.index.search({
-        query: val.toLowerCase(),
-        index: ['content'],
-        limit: 1000,
-      });
+      let ids = this.index.search(val.toLowerCase(), { limit: 1000 });
       this.found = ids.length;
 
       // Cut the results array down to 100 rows
@@ -181,35 +177,24 @@ export default {
       this.index = new FlexSearch.Index({
         tokenize: 'full',
       });
-      let cfg,
-        ctx,
-        map,
-        reg = undefined;
+
+      // flexsearch 0.8.x uses different export format: 1.map.json, 1.reg.json
+      let mapData, regData;
       // console.log('buildIndex() MODE', import.meta.env.MODE);
       if (import.meta.env.MODE === 'development') {
-        cfg = await axios.get(`/indexes/${name}/cfg.json`);
-        ctx = await axios.get(`/indexes/${name}/ctx.json`);
-        map = await axios.get(`/indexes/${name}/map.json`);
-        reg = await axios.get(`/indexes/${name}/reg.json`);
+        mapData = await axios.get(`/indexes/${name}/1.map.json`);
+        regData = await axios.get(`/indexes/${name}/1.reg.json`);
       } else {
-        cfg = await axios.get(
-          `https://raw.githubusercontent.com/api3dao/airnode-docs/main/docs/public/indexes/${name}/cfg.json`
+        mapData = await axios.get(
+          `https://raw.githubusercontent.com/api3dao/airnode-docs/main/docs/public/indexes/${name}/1.map.json`
         );
-        ctx = await axios.get(
-          `https://raw.githubusercontent.com/api3dao/airnode-docs/main/docs/public/indexes/${name}/ctx.json`
-        );
-        map = await axios.get(
-          `https://raw.githubusercontent.com/api3dao/airnode-docs/main/docs/public/indexes/${name}/map.json`
-        );
-        reg = await axios.get(
-          `https://raw.githubusercontent.com/api3dao/airnode-docs/main/docs/public/indexes/${name}/reg.json`
+        regData = await axios.get(
+          `https://raw.githubusercontent.com/api3dao/airnode-docs/main/docs/public/indexes/${name}/1.reg.json`
         );
       }
 
-      this.index.import('cfg', cfg.data);
-      this.index.import('ctx', ctx.data);
-      this.index.import('map', map.data);
-      this.index.import('reg', reg.data);
+      this.index.import('1.map', mapData.data);
+      this.index.import('1.reg', regData.data);
       this.isIndexLoaded = true;
     },
   },
