@@ -17,13 +17,9 @@ const retrieveIndexAll = () => {
       withFileTypes: true,
     })
     .filter((item) => !item.isDirectory())
-    .map((item) => item.name.slice(0, -5));
+    .filter((item) => item.name.endsWith('.json') && !item.name.startsWith('.'))
+    .map((item) => item.name.slice(0, -5)); // Remove .json extension
 
-  // Need to filter the array since Apple likes to add a hidden file ".DS_"
-  keys = keys.filter(filterKeys);
-  function filterKeys(key) {
-    return ['cfg', 'ctx', 'map', 'reg'].includes(key);
-  }
   console.log('retrieveIndexAll keys array', keys);
 
   for (let i = 0, key; i < keys.length; i += 1) {
@@ -42,13 +38,9 @@ const retrieveIndexLatest = () => {
       withFileTypes: true,
     })
     .filter((item) => !item.isDirectory())
-    .map((item) => item.name.slice(0, -5));
+    .filter((item) => item.name.endsWith('.json') && !item.name.startsWith('.'))
+    .map((item) => item.name.slice(0, -5)); // Remove .json extension
 
-  // Need to filter the array since Apple likes to add a hidden file ".DS_"
-  keys = keys.filter(filterKeys);
-  function filterKeys(key) {
-    return ['cfg', 'ctx', 'map', 'reg'].includes(key);
-  }
   console.log('retrieveIndexLatest keys array', keys);
 
   for (let i = 0, key; i < keys.length; i += 1) {
@@ -66,13 +58,7 @@ const retrieveIndexLatest = () => {
 */
 function searchIndexAll() {
   const query = 'gateway';
-  let ids = indexAll.search({
-    query: query,
-    index: ['content'],
-    limit: 100,
-    suggest: false,
-    bool: 'and',
-  });
+  let ids = indexAll.search(query, { limit: 100 });
   console.log('----- indexAll -----');
   console.log(`Found "${query}" in (${ids.length}) pages.`);
   console.log('ids', ids);
@@ -87,13 +73,7 @@ function searchIndexAll() {
 */
 function searchIndexLatest() {
   const query = 'gateway';
-  let ids = indexLatest.search({
-    query: query,
-    index: ['content'],
-    limit: 100,
-    suggest: false,
-    bool: 'and',
-  });
+  let ids = indexLatest.search(query, { limit: 100 });
   console.log('----- indexLatest -----');
   console.log(`Found "${query}" in (${ids.length}) pages.`);
   console.log('ids', ids);
