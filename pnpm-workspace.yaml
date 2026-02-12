@@ -4,3 +4,6 @@ minimumReleaseAge: 20160
 
 onlyBuiltDependencies:
   - esbuild
+minimumReleaseAgeExclude:
+  # Renovate security update: axios@1.13.5
+  - axios@1.13.5
