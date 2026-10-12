@@ -19,7 +19,7 @@ export default {
       {
         rel: 'apple-touch-icon',
         sizes: '180x180',
-        href: '/img/small-logo.png',
+        href: '/img/android-chrome-192x192.png',
       },
     ],
     [
@@ -28,7 +28,7 @@ export default {
         rel: 'icon',
         type: 'image/png',
         sizes: '32x32',
-        href: '/img/small-logo.png',
+        href: '/img/android-chrome-192x192.png',
       },
     ],
     [
@@ -37,15 +37,15 @@ export default {
         rel: 'icon',
         type: 'image/png',
         sizes: '16x16',
-        href: '/img/small-logo.png',
+        href: '/img/android-chrome-192x192.png',
       },
     ],
   ],
   themeConfig: {
     externalLinkIcon: true,
     logo: {
-      light: '/img/API3-Active.png',
-      dark: '/img/api3-inactive.png',
+      light: '/img/api3-logo-light-theme.svg',
+      dark: '/img/api3-logo-dark-theme.svg',
     },
     siteTitle: 'Documentation',
     socialLinks: [
