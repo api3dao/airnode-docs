@@ -81,7 +81,7 @@ In the number steps below consider some of the search criteria listed below. Nar
 5. Change frontmatter `version:` to the proper version.
 6. For `/latest` look for and change external links to API3 repos that may use older repo tags, `/master`, or `/main`. Some repos may not use tags and `/main` must be used, some may have tags unrelated to Airnode. Evaluate each link for changes as needed.
 7. Look for links with versions that use x.x.x (i.e. Admin cli, 0.12.0)
-8. Look for links to api3 repos that use older version such as Airnode `v0.11` or OIS `v2.0`. These need to use the proper versions.
+8. Look for links to API3 repos that use older version such as Airnode `v0.11` or OIS `v2.0`. These need to use the proper versions.
 9. Verify links in Airnode releases reference the proper OIS release and vice-versa. See the OIS [versions](/reference/ois/latest/versions.md) table.
 10. For `/next` change frontmatter `pageHeader: Reference → Airnode → vx.x` to the proper version.
 11. `/next` will not have a repo tag created until its version is release. Use the version of `/latest` in the mean time.
