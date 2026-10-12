@@ -19,10 +19,7 @@ tags:
 
 # {{$frontmatter.title}}
 
-When it is time to deploy the Airnode to AWS, the Docker
-[deployer image](/reference/airnode/v0.12/docker/deployer-image.md) will need
-the AWS credentials to build the node. Variable names cannot contain dashes (-)
-or start with a number.
+When it is time to deploy the Airnode to AWS, the Docker [deployer image](/reference/airnode/v0.12/docker/deployer-image.md) will need the AWS credentials to build the node. Variable names cannot contain dashes (-) or start with a number.
 
 ```bash
 AWS_ACCESS_KEY_ID=XYZ...123

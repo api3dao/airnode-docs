@@ -12,9 +12,7 @@ tags:
 
 # {{$frontmatter.title}}
 
-Versioning of a a [docset](/dev/docsets.md) only applies to Airnode and OIS.
-There is the concept of `/latest` and `/next`. Consider the chart below which
-represents Airnode:
+Versioning of a a [docset](/dev/docsets.md) only applies to Airnode and OIS. There is the concept of `/latest` and `/next`. Consider the chart below which represents Airnode:
 
 | File path and URI         | Version |
 | ------------------------- | ------- |
@@ -42,20 +40,14 @@ reference
 
 In order to advance the versioning the following actions occur:
 
-1. Rename (`git mv`) the `/latest` folder to the version that is being
-   superseded vX.YZ.
+1. Rename (`git mv`) the `/latest` folder to the version that is being superseded vX.YZ.
 2. Make a copy of `/next` as `/latest`.
 
-Update links and other version specific content. For `vx.xx`, `/latest`, and
-`/next` review the following and make the following changes where needed.
+Update links and other version specific content. For `vx.xx`, `/latest`, and `/next` review the following and make the following changes where needed.
 
-> Be careful with Airnode `migration.md` pages. Older version are mentioned as
-> needed within.
+> Be careful with Airnode `migration.md` pages. Older version are mentioned as needed within.
 
-In the number steps below consider some of the search criteria listed below.
-Narrow the search include/exclude pattern. `migration.md` should be updated
-manually for each Airnode version. Make sure the version, latest, or next
-attribute is correct for each version of Airnode or OIS.
+In the number steps below consider some of the search criteria listed below. Narrow the search include/exclude pattern. `migration.md` should be updated manually for each Airnode version. Make sure the version, latest, or next attribute is correct for each version of Airnode or OIS.
 
 <img src="./assets/images/version-search.png" style="width:350px"/>
 
@@ -84,25 +76,15 @@ attribute is correct for each version of Airnode or OIS.
 
 1. Update `themeConfig.sidebar` in `/.vitepress/config.js`
 2. Update `/.vitepress/versions.json` to reflect the latest and next versions.
-3. Update internal hyperlinks in the content. In latest use `/latest`, next use
-   `/next`. For folders of a specific version use the correct version number.
+3. Update internal hyperlinks in the content. In latest use `/latest`, next use `/next`. For folders of a specific version use the correct version number.
 4. Be sure the above step also changed the `path` in frontmatter.
 5. Change frontmatter `version:` to the proper version.
-6. For `/latest` look for and change external links to API3 repos that may use
-   older repo tags, `/master`, or `/main`. Some repos may not use tags and
-   `/main` must be used, some may have tags unrelated to Airnode. Evaluate each
-   link for changes as needed.
+6. For `/latest` look for and change external links to API3 repos that may use older repo tags, `/master`, or `/main`. Some repos may not use tags and `/main` must be used, some may have tags unrelated to Airnode. Evaluate each link for changes as needed.
 7. Look for links with versions that use x.x.x (i.e. Admin cli, 0.12.0)
-8. Look for links to api3 repos that use older version such as Airnode `v0.11`
-   or OIS `v2.0`. These need to use the proper versions.
-9. Verify links in Airnode releases reference the proper OIS release and
-   vice-versa. See the OIS [versions](/reference/ois/latest/versions.md) table.
-10. For `/next` change frontmatter `pageHeader: Reference → Airnode → vx.x` to
-    the proper version.
-11. `/next` will not have a repo tag created until its version is release. Use
-    the version of `/latest` in the mean time.
-12. Update the [Versions](/reference/ois/latest/versions.md) page in OIS which
-    maps OIS versions to Airnode versions.
-13. Update the [Versions](/reference/airnode/latest/versions.md) page in
-    Airnode.
+8. Look for links to api3 repos that use older version such as Airnode `v0.11` or OIS `v2.0`. These need to use the proper versions.
+9. Verify links in Airnode releases reference the proper OIS release and vice-versa. See the OIS [versions](/reference/ois/latest/versions.md) table.
+10. For `/next` change frontmatter `pageHeader: Reference → Airnode → vx.x` to the proper version.
+11. `/next` will not have a repo tag created until its version is release. Use the version of `/latest` in the mean time.
+12. Update the [Versions](/reference/ois/latest/versions.md) page in OIS which maps OIS versions to Airnode versions.
+13. Update the [Versions](/reference/airnode/latest/versions.md) page in Airnode.
 14. Change OIS and Airnode versions in he quick start guides.

@@ -19,23 +19,15 @@ tags:
 
 # {{$frontmatter.title}}
 
-A `receipt.json` file is outputted after each deployment and contains
-non-sensitive information about the deployment. The main use of a receipt file
-is to remove an Airnode deployment when no longer needed. See the
-[Airnode Removal documentation](/reference/airnode/v0.11/packages/deployer.md)
-for usage and commands.
+A `receipt.json` file is outputted after each deployment and contains non-sensitive information about the deployment. The main use of a receipt file is to remove an Airnode deployment when no longer needed. See the [Airnode Removal documentation](/reference/airnode/v0.11/packages/deployer.md) for usage and commands.
 
-It also provides the Airnode xpub for the hardened derivation path
-`m/44'/60'/0'` that must be announced off-chain in order for sponsors to derive
-their designated sponsor wallet. This wallet will then be used by the Airnode to
-fulfill each request made by the requester contracts.
+It also provides the Airnode xpub for the hardened derivation path `m/44'/60'/0'` that must be announced off-chain in order for sponsors to derive their designated sponsor wallet. This wallet will then be used by the Airnode to fulfill each request made by the requester contracts.
 
 - `airnodeWallet`: address and xpub information
 - `deployment`: Airnode configuration and timestamp of deployment
 - `success`: specifies whether the deployment was successful or not
 
-A `receipt.json` file is created for both a AWS or GCP deployment. A receipt is
-not generated for client deployments (deploying to a Docker container).
+A `receipt.json` file is created for both a AWS or GCP deployment. A receipt is not generated for client deployments (deploying to a Docker container).
 
 ::: code-group
 

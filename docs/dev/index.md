@@ -12,9 +12,7 @@ tags:
 
 # {{$frontmatter.title}}
 
-Use newer versions of Nodejs. Currently the builds on GitHub are using `v22`.
-Mac users (Apple silicon) should see the page
-[Rosetta, Nodejs, esbuild](/dev/rosetta.md) if you get an error.
+Use newer versions of Nodejs. Currently the builds on GitHub are using `v22`. Mac users (Apple silicon) should see the page [Rosetta, Nodejs, esbuild](/dev/rosetta.md) if you get an error.
 
 ::: info Nodejs `v22`
 
@@ -46,8 +44,7 @@ pnpm docs:dev
 
 ## Push the working branch
 
-Before pushing your working branch to the remote repo, be sure that the branch
-builds.
+Before pushing your working branch to the remote repo, be sure that the branch builds.
 
 ```sh
 pnpm docs:build
@@ -64,16 +61,11 @@ build complete in 5.20s.
 ✨  Done in 6.19s.
 ```
 
-If the build displays errors or warnings (such as broken links) address them as
-needed.
+If the build displays errors or warnings (such as broken links) address them as needed.
 
 ## Memory
 
-It maybe necessary to increase the memory for Nodejs to run `pnpm docs:dev` or
-`pnpm docs:build`. This can be done with the command below, with a higher value
-potentially necessary. For Apple silicon this may be a sign of a
-[Rosetta issue](/dev/rosetta.md) which should be addressed before committing to
-additional memory for Nodejs.
+It maybe necessary to increase the memory for Nodejs to run `pnpm docs:dev` or `pnpm docs:build`. This can be done with the command below, with a higher value potentially necessary. For Apple silicon this may be a sign of a [Rosetta issue](/dev/rosetta.md) which should be addressed before committing to additional memory for Nodejs.
 
 ```sh
 export NODE_OPTIONS=--max_old_space_size=1024
