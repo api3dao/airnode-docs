@@ -5,14 +5,5 @@
   "tabWidth": 2,
   "trailingComma": "es5",
   "useTabs": false,
-  "overrides": [
-    {
-      "files": "*.md",
-      "options": {
-        "parser": "markdown",
-        "proseWrap": "always"
-      }
-    }
-  ],
   "endOfLine": "lf"
 }

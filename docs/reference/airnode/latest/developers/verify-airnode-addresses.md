@@ -19,18 +19,9 @@ tags:
 
 # {{$frontmatter.title}}
 
-An Airnode is owned and operated by an API provider. Every Airnode has a unique
-on-chain
-[`airnodeAddress`](/reference/airnode/latest/concepts/airnode.md#airnodeaddress)
-created and known by its API provider. API providers normally announce their
-Airnode addresses in the form of a DNS `TXT` record within their DNS
-registration, which also serves to prove ownership. An API provider's Airnode
-address is the same for all chains.
+An Airnode is owned and operated by an API provider. Every Airnode has a unique on-chain [`airnodeAddress`](/reference/airnode/latest/concepts/airnode.md#airnodeaddress) created and known by its API provider. API providers normally announce their Airnode addresses in the form of a DNS `TXT` record within their DNS registration, which also serves to prove ownership. An API provider's Airnode address is the same for all chains.
 
-The key for the `TXT` record is `chainapi-verification-keys` and is an array of
-Airnode addresses owned by the API provider. Below is an example of the Airnode
-for
-[dxFeed](https://www.digitalocean.com/community/tools/dns?domain=dxfeed.com#TXT-Records).
+The key for the `TXT` record is `chainapi-verification-keys` and is an array of Airnode addresses owned by the API provider. Below is an example of the Airnode for [dxFeed](https://www.digitalocean.com/community/tools/dns?domain=dxfeed.com#TXT-Records).
 
 ![dxfeed-txt-record](../assets/images/txt-record-dxfeed.png)
 

@@ -19,22 +19,11 @@ tags:
 
 # {{$frontmatter.title}}
 
-The
-[airnode-deployer](https://github.com/api3dao/airnode/tree/v0.12/packages/airnode-deployer)
-package is used primarily by the
-[Docker Images](/reference/airnode/v0.12/docker/). This CLI tool provides the
-underlying commands used by the Docker images when deploying an Airnode. API
-providers are strongly encouraged to use the
-[Docker Images](/reference/airnode/v0.12/docker/) when deploying an Airnode and
-not the deployer CLI commands.
+The [airnode-deployer](https://github.com/api3dao/airnode/tree/v0.12/packages/airnode-deployer) package is used primarily by the [Docker Images](/reference/airnode/v0.12/docker/). This CLI tool provides the underlying commands used by the Docker images when deploying an Airnode. API providers are strongly encouraged to use the [Docker Images](/reference/airnode/v0.12/docker/) when deploying an Airnode and not the deployer CLI commands.
 
 ## Usage
 
-The deployer's commands can be run using
-[npx](https://www.codingninjas.com/codestudio/library/difference-between-npm-and-npx),
-installing a global npm package or by manually building the airnode-deployer
-package. Using npx is the simplest method to interact with the deployer manually
-if you do not wish to use the Docker images.
+The deployer's commands can be run using [npx](https://www.codingninjas.com/codestudio/library/difference-between-npm-and-npx), installing a global npm package or by manually building the airnode-deployer package. Using npx is the simplest method to interact with the deployer manually if you do not wish to use the Docker images.
 
 - [Using npx](/reference/airnode/v0.12/packages/deployer.md#using-npx)
 - [Global Package](/reference/airnode/v0.12/packages/deployer.md#global-package)
@@ -42,9 +31,7 @@ if you do not wish to use the Docker images.
 
 ### Using npx
 
-The airnode-deployer package can be run as an npm package using npx. This allows
-you to run deployer commands without installing the deployer npm package or
-having to manually build the airnode-deployer package yourself.
+The airnode-deployer package can be run as an npm package using npx. This allows you to run deployer commands without installing the deployer npm package or having to manually build the airnode-deployer package yourself.
 
 ```sh
 npx @api3/airnode-deployer deploy \
@@ -56,8 +43,7 @@ npx @api3/airnode-deployer deploy \
 
 ### Global Package
 
-The airnode-deployer package can be installed globally with yarn or npm. If
-installed using yarn make sure yarn bin is added to `PATH`.
+The airnode-deployer package can be installed globally with yarn or npm. If installed using yarn make sure yarn bin is added to `PATH`.
 
 ```sh
 yarn global add @api3/airnode-deployer
@@ -120,27 +106,18 @@ cp config/secrets.env.example config/secrets.env
 
 ## Credentials
 
-When using the `airnode-deployer` Docker image, AWS or GCP credentials are
-loaded automatically. Conversely, when using the deployer CLI directly, you will
-need to first load AWS or GCP credentials into the environment manually as
-described below.
+When using the `airnode-deployer` Docker image, AWS or GCP credentials are loaded automatically. Conversely, when using the deployer CLI directly, you will need to first load AWS or GCP credentials into the environment manually as described below.
 
 ### AWS Credentials
 
 For AWS, there are two options:
 
-1. Set the environment variables `AWS_ACCESS_KEY_ID` and `AWS_SECRET_ACCESS_KEY`
-   (and `AWS_SESSION_TOKEN` as well, if using temporary credentials) to their
-   appropriate values.
-2. Populate the AWS `credentials` file. See the AWS documentation for the
-   [expected file format](https://docs.aws.amazon.com/sdkref/latest/guide/file-format.html#file-format-creds)
-   as well as its
-   [default location](https://docs.aws.amazon.com/sdkref/latest/guide/file-location.html).
+1. Set the environment variables `AWS_ACCESS_KEY_ID` and `AWS_SECRET_ACCESS_KEY` (and `AWS_SESSION_TOKEN` as well, if using temporary credentials) to their appropriate values.
+2. Populate the AWS `credentials` file. See the AWS documentation for the [expected file format](https://docs.aws.amazon.com/sdkref/latest/guide/file-format.html#file-format-creds) as well as its [default location](https://docs.aws.amazon.com/sdkref/latest/guide/file-location.html).
 
 ### GCP Credentials
 
-Set the environmental variable `GOOGLE_APPLICATION_CREDENTIALS` to the path of
-the `gcp.json` credentials file.
+Set the environmental variable `GOOGLE_APPLICATION_CREDENTIALS` to the path of the `gcp.json` credentials file.
 
 ## Commands
 
@@ -153,33 +130,20 @@ the `gcp.json` credentials file.
 
 ### Airnode Deployment
 
-When creating or updating an Airnode the `config.json` and `secrets.env` files
-are needed. You can use the provided example
-[config.json](https://github.com/api3dao/airnode/blob/v0.12/packages/airnode-deployer/config/config.example.json)
-and
-[secrets.env](https://github.com/api3dao/airnode/blob/v0.12/packages/airnode-deployer/config/secrets.example.env)
-templates to get started quickly, but you will need to edit these with your own
-API details and secrets.
+When creating or updating an Airnode the `config.json` and `secrets.env` files are needed. You can use the provided example [config.json](https://github.com/api3dao/airnode/blob/v0.12/packages/airnode-deployer/config/config.example.json) and [secrets.env](https://github.com/api3dao/airnode/blob/v0.12/packages/airnode-deployer/config/secrets.example.env) templates to get started quickly, but you will need to edit these with your own API details and secrets.
 
 <!-- Use of .html below is intended. -->
 <WarningSimultaneousDeployments removeLink="/reference/airnode/v0.12/docker/deployer-image.html#manual-removal"/>
 
-Make sure `config.json` and `secrets.env` are available in the path for the
-`--configuration` argument.
+Make sure `config.json` and `secrets.env` are available in the path for the `--configuration` argument.
 
 #### deploy
 
-When executed, the `deploy` command defaults to creating a `receipt.json` file
-in the `config/` directory, although a different path can be specified using the
-path and name with the `--receipt` argument. The receipt contains metadata about
-the deployment and can be used to remove the Airnode.
+When executed, the `deploy` command defaults to creating a `receipt.json` file in the `config/` directory, although a different path can be specified using the path and name with the `--receipt` argument. The receipt contains metadata about the deployment and can be used to remove the Airnode.
 
-By default the deployer will save logs into the `config/logs/` directory. This
-can be changed with the `--logs` argument.
+By default the deployer will save logs into the `config/logs/` directory. This can be changed with the `--logs` argument.
 
-If the deployment isn't successful, the command will try to automatically remove
-deployed resources. You can disable this by running the deploy command with a
-`--no-auto-remove` argument.
+If the deployment isn't successful, the command will try to automatically remove deployed resources. You can disable this by running the deploy command with a `--no-auto-remove` argument.
 
 ```bash
 # Deploys an Airnode instance using the config.json and
@@ -207,19 +171,15 @@ airnode-deployer deploy \
   --logs config/logs/
 ```
 
-See how [deploy](/reference/airnode/v0.12/docker/deployer-image.md#deploy) is
-used via the AWS/GCP deployer image.
+See how [deploy](/reference/airnode/v0.12/docker/deployer-image.md#deploy) is used via the AWS/GCP deployer image.
 
 ### Listing Airnodes
 
-Once you've already deployed one or more Airnode, you can list your currently
-deployed instances using the `list` command.
+Once you've already deployed one or more Airnode, you can list your currently deployed instances using the `list` command.
 
 #### list
 
-By default, the deployer will attempt to list Airnode instances from all the
-supported cloud providers. You can use the `--cloud-providers` option to select
-just the cloud providers you want the deployer to list from.
+By default, the deployer will attempt to list Airnode instances from all the supported cloud providers. You can use the `--cloud-providers` option to select just the cloud providers you want the deployer to list from.
 
 ```bash
 # Lists deployed Airnode instances
@@ -239,14 +199,11 @@ airnode-deployer list
 airnode-deployer list --cloud-providers gcp
 ```
 
-See how [list](/reference/airnode/v0.12/docker/deployer-image.md#list) is used
-via the AWS/GCP deployer image.
+See how [list](/reference/airnode/v0.12/docker/deployer-image.md#list) is used via the AWS/GCP deployer image.
 
 ### Fetching deployment information
 
-You can use the `info` command to retrieve information about existing
-deployments. The retrieved information include deployment's Airnode address,
-stage, Airnode version and the update history.
+You can use the `info` command to retrieve information about existing deployments. The retrieved information include deployment's Airnode address, stage, Airnode version and the update history.
 
 #### info
 
@@ -266,8 +223,7 @@ Options:
 airnode-deployer info aws2c6ef2b3
 ```
 
-See how [info](/reference/airnode/v0.12/docker/deployer-image.md#info) is used
-via the AWS/GCP deployer image.
+See how [info](/reference/airnode/v0.12/docker/deployer-image.md#info) is used via the AWS/GCP deployer image.
 
 ### Reverting to a previous version
 
@@ -294,14 +250,11 @@ Options:
 airnode-deployer rollback aws808e2a22 5bbcd317
 ```
 
-See how [rollback](/reference/airnode/v0.12/docker/deployer-image.md#rollback)
-is used via the AWS/GCP deployer image.
+See how [rollback](/reference/airnode/v0.12/docker/deployer-image.md#rollback) is used via the AWS/GCP deployer image.
 
 ### Fetching deployment files
 
-During the Airnode deployment, your `config.json` and `secrets.env` are uploaded
-to the cloud provider of your choosing. You can use the `fetch-files` command to
-retrieve them.
+During the Airnode deployment, your `config.json` and `secrets.env` are uploaded to the cloud provider of your choosing. You can use the `fetch-files` command to retrieve them.
 
 #### fetch-files
 
@@ -320,19 +273,14 @@ Options:
 airnode-deployer fetch-files aws2c6ef2b3
 ```
 
-See how
-[fetch-files](/reference/airnode/v0.12/docker/deployer-image.md#fetch-files) is
-used via the AWS/GCP deployer image.
+See how [fetch-files](/reference/airnode/v0.12/docker/deployer-image.md#fetch-files) is used via the AWS/GCP deployer image.
 
 ### Airnode Removal
 
 An Airnode can be removed in two different ways:
 
-- **Best:** With `remove`, which uses the deployment ID found either in the
-  [deployment receipt file](/reference/airnode/v0.12/deployment-files/receipt-json.md)
-  or via the `list` command.
-- **Alternate:** With `remove-with-receipt`, which uses the deployment receipt
-  created when the Airnode was deployed.
+- **Best:** With `remove`, which uses the deployment ID found either in the [deployment receipt file](/reference/airnode/v0.12/deployment-files/receipt-json.md) or via the `list` command.
+- **Alternate:** With `remove-with-receipt`, which uses the deployment receipt created when the Airnode was deployed.
 
 #### remove
 
@@ -352,8 +300,7 @@ Options:
 airnode-deployer remove aws2c6ef2b3
 ```
 
-See how [remove](/reference/airnode/v0.12/docker/deployer-image.md#remove) is
-used via the AWS/GCP deployer image.
+See how [remove](/reference/airnode/v0.12/docker/deployer-image.md#remove) is used via the AWS/GCP deployer image.
 
 #### remove-with-receipt
 
@@ -376,8 +323,6 @@ airnode-deployer remove-with-receipt \
   --logs config/logs/
 ```
 
-See how
-[remove-with-receipt](/reference/airnode/v0.12/docker/deployer-image.md#remove-with-receipt)
-is used via the AWS/GCP deployer image.
+See how [remove-with-receipt](/reference/airnode/v0.12/docker/deployer-image.md#remove-with-receipt) is used via the AWS/GCP deployer image.
 
 <FlexEndTag/>

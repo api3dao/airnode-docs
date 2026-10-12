@@ -19,9 +19,7 @@ tags:
 
 # {{$frontmatter.title}}
 
-Airnode supports different strategies to calculate the gas price that it should
-use for submitting transactions. These can be defined in the `config.json` using
-the `chains.options.gasPriceOracle` field.
+Airnode supports different strategies to calculate the gas price that it should use for submitting transactions. These can be defined in the `config.json` using the `chains.options.gasPriceOracle` field.
 
 The supported strategies include:
 
@@ -65,25 +63,13 @@ Below are examples of each strategy.
 }
 ```
 
-The strategies are attempted in the order that they are defined in `config.json`
-where the Airnode will move on to the next strategy in the list if the current
-fails. The only required strategy to be included is `constantGasPrice` which is
-intended to be used as the final fallback if all other strategies fail to return
-a gas price. Therefore, `constantGasPrice` should be set as the last strategy in
-the list.
+The strategies are attempted in the order that they are defined in `config.json` where the Airnode will move on to the next strategy in the list if the current fails. The only required strategy to be included is `constantGasPrice` which is intended to be used as the final fallback if all other strategies fail to return a gas price. Therefore, `constantGasPrice` should be set as the last strategy in the list.
 
-It does not make sense to mix and match eip1559
-(`providerRecommendedEip1559GasPrice`) and non-eip1559
-(`providerRecommendedGasPrice`) strategies though it can be done. The best
-practice is to use one or the other.
+It does not make sense to mix and match eip1559 (`providerRecommendedEip1559GasPrice`) and non-eip1559 (`providerRecommendedGasPrice`) strategies though it can be done. The best practice is to use one or the other.
 
 ## latestBlockPercentileGasPrice
 
-The `latestBlockPercentileGasPrice` strategy calculates a gas price based on the
-specified percentile of previous transactions in recent blocks and sets the
-transaction to `type 0` and a `gasPrice` value. The parameters that the strategy
-uses to calculate the gas price can be configured. This strategy can fail with
-local hardhat nodes because the chain may not have enough blocks.
+The `latestBlockPercentileGasPrice` strategy calculates a gas price based on the specified percentile of previous transactions in recent blocks and sets the transaction to `type 0` and a `gasPrice` value. The parameters that the strategy uses to calculate the gas price can be configured. This strategy can fail with local hardhat nodes because the chain may not have enough blocks.
 
 ```json
 {
@@ -101,8 +87,7 @@ local hardhat nodes because the chain may not have enough blocks.
 
 ### `minTransactionCount`
 
-(required) - The minimum amount of transactions required in a block to use for
-calculating a gas price percentile.
+(required) - The minimum amount of transactions required in a block to use for calculating a gas price percentile.
 
 ### `pastToCompareInBlocks`
 
@@ -110,15 +95,11 @@ calculating a gas price percentile.
 
 ### `maxDeviationMultiplier`
 
-(required) - The maximum deviation multiplier of the latest block gas price
-percentile compared to the reference block gas price percentile. Used to protect
-against large gas price spikes.
+(required) - The maximum deviation multiplier of the latest block gas price percentile compared to the reference block gas price percentile. Used to protect against large gas price spikes.
 
 ## providerRecommendedGasPrice
 
-The `providerRecommendedGasPrice` strategy gets a gas price estimate from the
-provider, applies the defined multiplier to it and sets the transaction
-to`type 0` and a `gasPrice` value.
+The `providerRecommendedGasPrice` strategy gets a gas price estimate from the provider, applies the defined multiplier to it and sets the transaction to`type 0` and a `gasPrice` value.
 
 ```json
 {
@@ -129,16 +110,11 @@ to`type 0` and a `gasPrice` value.
 
 ### `recommendedGasPriceMultiplier`
 
-(required) - A number with a maximum of two decimals that gets multiplied by the
-provider reported gas price. The resulting Gas Price will equal
-`Gas Price * providerRecommendedGasPrice`.
+(required) - A number with a maximum of two decimals that gets multiplied by the provider reported gas price. The resulting Gas Price will equal `Gas Price * providerRecommendedGasPrice`.
 
 ## providerRecommendedEip1559GasPrice
 
-The `providerRecommendedEip1559GasPrice` strategy gets an EIP1559 fee data
-estimate from the provider and applies the configured `baseFeeMultiplier` and
-`priorityFee` values returning a `type 2` transaction with `maxFeePerGas` and
-`maxPriorityFeePerGas` values.
+The `providerRecommendedEip1559GasPrice` strategy gets an EIP1559 fee data estimate from the provider and applies the configured `baseFeeMultiplier` and `priorityFee` values returning a `type 2` transaction with `maxFeePerGas` and `maxPriorityFeePerGas` values.
 
 ```json
 {
@@ -153,14 +129,11 @@ estimate from the provider and applies the configured `baseFeeMultiplier` and
 
 ### `baseFeeMultiplier`
 
-(required) - Number multiplied by the Base Fee to yield the Maximum Fee for
-EIP-1559 transactions. Defaults to: `2`. The resulting Maximum Fee will equal
-`(Base Fee * baseFeeMultiplier) + priorityFee`.
+(required) - Number multiplied by the Base Fee to yield the Maximum Fee for EIP-1559 transactions. Defaults to: `2`. The resulting Maximum Fee will equal `(Base Fee * baseFeeMultiplier) + priorityFee`.
 
 ### `priorityFee`
 
-(required) - An object that configures the EIP-1559 Priority Fee. Defaults:
-`{"value": 3.12, "unit": "gwei"}`.
+(required) - An object that configures the EIP-1559 Priority Fee. Defaults: `{"value": 3.12, "unit": "gwei"}`.
 
   <div style="margin-left:32px;">
 
@@ -170,16 +143,13 @@ EIP-1559 transactions. Defaults to: `2`. The resulting Maximum Fee will equal
 
 #### `priorityFee.unit`
 
-(required) - The unit of the priority fee value. It can be one of the following:
-(wei, kwei, mwei, gwei, szabo, finney, ether).
+(required) - The unit of the priority fee value. It can be one of the following: (wei, kwei, mwei, gwei, szabo, finney, ether).
 
   </div>
 
 ## constantGasPrice
 
-The `constantGasPrice` strategy returns a `type 0` gas price with the configured
-`gasPrice` value. This strategy is intended to be used as a fallback in the case
-that the other strategies fail to return a gas price.
+The `constantGasPrice` strategy returns a `type 0` gas price with the configured `gasPrice` value. This strategy is intended to be used as a fallback in the case that the other strategies fail to return a gas price.
 
 ```json
 {
@@ -193,8 +163,7 @@ that the other strategies fail to return a gas price.
 
 ### `gasPrice`
 
-(required) - An object of the form `{"value": 0, "unit": "wei"}` that configures
-the amount to use as gas price.
+(required) - An object of the form `{"value": 0, "unit": "wei"}` that configures the amount to use as gas price.
 
   <div style="margin-left:32px;">
 
@@ -204,8 +173,7 @@ the amount to use as gas price.
 
 #### `gasPrice.unit`
 
-(required) The unit of the `gasPrice` value. It can be one of the following:
-(wei, kwei, mwei, gwei, szabo, finney, ether).
+(required) The unit of the `gasPrice` value. It can be one of the following: (wei, kwei, mwei, gwei, szabo, finney, ether).
 
   </div>
 

@@ -12,8 +12,7 @@ tags:
 
 # {{$frontmatter.title}}
 
-VitePress provides several containers. The following examples explain how they
-should be used in `airnode-docs`.
+VitePress provides several containers. The following examples explain how they should be used in `airnode-docs`.
 
 ::: info
 
@@ -35,8 +34,7 @@ Express to the reader not to do something.
 
 ::: danger
 
-Rarely used. Expresses an important failure concern to the reader should they
-fail to follow instructions.
+Rarely used. Expresses an important failure concern to the reader should they fail to follow instructions.
 
 :::
 

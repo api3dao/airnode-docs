@@ -14,9 +14,7 @@ tags:
 
 # {{$frontmatter.title}}
 
-You can add a style definition just for a single page. Be careful not to use
-class names used by VitePress. Prefixing `api3` to all class names is a best
-practice to protect VitePress classes.
+You can add a style definition just for a single page. Be careful not to use class names used by VitePress. Prefixing `api3` to all class names is a best practice to protect VitePress classes.
 
 <div class="api3-this-smaller-font">this-smaller-font</div>
 <br/>

@@ -19,15 +19,9 @@ tags:
 
 # {{$frontmatter.title}}
 
-The `secrets.env` file is bundled with a
-[config.json](/reference/airnode/v0.13/deployment-files/config-json.md) file and
-contains the secrets that the respective Airnode deployments will need. All
-variables defined in a `secrets.env` file will be available in the `config.json`
-file via variable interpolation (e.g. `${VARIABLE_NAME}`).
+The `secrets.env` file is bundled with a [config.json](/reference/airnode/v0.13/deployment-files/config-json.md) file and contains the secrets that the respective Airnode deployments will need. All variables defined in a `secrets.env` file will be available in the `config.json` file via variable interpolation (e.g. `${VARIABLE_NAME}`).
 
-There are few pieces of data that are **highly recommend** to be provided via
-variables. The variable names shown can be adjusted to anything desired. Just be
-sure to change the correlating interpolation value in `config.json`.
+There are few pieces of data that are **highly recommend** to be provided via variables. The variable names shown can be adjusted to anything desired. Just be sure to change the correlating interpolation value in `config.json`.
 
 | Variable name           | `config.json` field name               | Description                                           |
 | ----------------------- | -------------------------------------- | ----------------------------------------------------- |
@@ -38,8 +32,7 @@ sure to change the correlating interpolation value in `config.json`.
 | HEARTBEAT_API_KEY       | `nodeSettings.heartbeat.apiKey`        | The API key to authenticate against the heartbeat URL |
 | GCP_PROJECT_ID          | `nodeSettings.cloudProvider.projectId` | (GCP only) The GCP project ID for deployment          |
 
-Below is an example of `secrets.env`. Variable names cannot contain dashes (-)
-or start with a number.
+Below is an example of `secrets.env`. Variable names cannot contain dashes (-) or start with a number.
 
 <!-- TODO: Reference a file from Airnode examples instead -->
 

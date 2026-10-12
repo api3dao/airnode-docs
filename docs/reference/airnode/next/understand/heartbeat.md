@@ -19,10 +19,7 @@ tags:
 
 # {{$frontmatter.title}}
 
-At the end of an Airnode's run (every minute), Airnode can make an HTTP POST
-request to a specified URL. This is both to signal that the Airnode is alive and
-working (useful especially right after the deployment) and also as a
-notification every time it runs (self-operates).
+At the end of an Airnode's run (every minute), Airnode can make an HTTP POST request to a specified URL. This is both to signal that the Airnode is alive and working (useful especially right after the deployment) and also as a notification every time it runs (self-operates).
 
 > <img src="../assets/images/heartbeat.png" width="550ps"/>
 >
@@ -31,8 +28,7 @@ notification every time it runs (self-operates).
 > 3.  <p>A response is sent to each request.</p>
 > 4.  <p>Finally Airnode makes a request to the heartbeat URL (HTTP POST). This could be to an operation within the API Airnode supports or to any cloud REST endpoint such as a monitoring service.</p>
 
-Turn on the optional heartbeat functionality by setting all fields in the
-`config.json` section for `nodeSettings.heartbeat`.
+Turn on the optional heartbeat functionality by setting all fields in the `config.json` section for `nodeSettings.heartbeat`.
 
 ```json{12-16}
 {
@@ -95,8 +91,7 @@ The table below illustrates the parameters passed to the Heartbeat URL.
 | oev_gateway_url              | body   | string |
 | signature                    | body   | string |
 
-Below is an example of what is included in the request body. Note that
-`airnode-heartbeat-api-key` can be found in the request header and not the body.
+Below is an example of what is included in the request body. Note that `airnode-heartbeat-api-key` can be found in the request header and not the body.
 
 ```json
 {
@@ -117,18 +112,13 @@ Below is an example of what is included in the request body. Note that
 
 The method by which the heartbeat payload is generated is as follows:
 
-- An object is marshalled to JSON - this object contains multiple fields as
-  shown above.
-- The Airnode's mnemonic (using the default EVM derivation path to derive a key)
-  is used to sign the payload.
+- An object is marshalled to JSON - this object contains multiple fields as shown above.
+- The Airnode's mnemonic (using the default EVM derivation path to derive a key) is used to sign the payload.
 - The payload and signature are included in a new object and marshalled to JSON.
 
-The reason this nested JSON approach has been used is to prevent subtle
-inconsistencies between JSON marshallers in different languages causing the
-signature to not match the payload.
+The reason this nested JSON approach has been used is to prevent subtle inconsistencies between JSON marshallers in different languages causing the signature to not match the payload.
 
-The airnode's public key can be recovered from this signature and be used,
-generally, to verify the authenticity of the payload.
+The airnode's public key can be recovered from this signature and be used, generally, to verify the authenticity of the payload.
 
 The overall content to the heartbeat URL is as follows:
 

@@ -12,14 +12,7 @@ tags:
 
 # {{$frontmatter.title}}
 
-This page refers to Apple silicon Macs that have implemented the use of Rosetta.
-It is best not to use Rosetta with the VitePress docs. While it may work it
-almost always results in longer builds and other processes. Other issues can
-arise such as the Rosetta platform error. This usually happens when Nodejs and
-NPM are installed using CLI running with Rosetta on, and NPM will install the
-wrong [esbuild](https://esbuild.github.io/getting-started/) package. It is best
-to use a version of Nodejs and NPM installed with its installer or install it
-using your CLI with Rosetta deactivated.
+This page refers to Apple silicon Macs that have implemented the use of Rosetta. It is best not to use Rosetta with the VitePress docs. While it may work it almost always results in longer builds and other processes. Other issues can arise such as the Rosetta platform error. This usually happens when Nodejs and NPM are installed using CLI running with Rosetta on, and NPM will install the wrong [esbuild](https://esbuild.github.io/getting-started/) package. It is best to use a version of Nodejs and NPM installed with its installer or install it using your CLI with Rosetta deactivated.
 
 ::: info Nodejs `v22`
 
@@ -52,13 +45,9 @@ installing a package on multiple platforms simultaneously.
 
 ## How to correct
 
-If you run `pnpm docs:build` and get the above error you may have an `esbuild`
-package for use with the non-native platform for Apple silicon probably install
-using NPM. Run the following (only using pnpm) to update `esbuild`. If your CLI
-is not running under Rosetta, it will install for the proper platform.
+If you run `pnpm docs:build` and get the above error you may have an `esbuild` package for use with the non-native platform for Apple silicon probably install using NPM. Run the following (only using pnpm) to update `esbuild`. If your CLI is not running under Rosetta, it will install for the proper platform.
 
-`esbuild` will not appear in `packages.json` under `devDependencies`, but it
-does update.
+`esbuild` will not appear in `packages.json` under `devDependencies`, but it does update.
 
 ```sh
 pnpm install --dev esbuild

@@ -12,8 +12,7 @@ tags:
 
 # {{$frontmatter.title}}
 
-A docset is a logically grouped set of pages. Every docset has a root folder.
-The current docsets are as follows:
+A docset is a logically grouped set of pages. Every docset has a root folder. The current docsets are as follows:
 
 - Explore: `/explore/`
 - Guides: `/guides`
@@ -30,5 +29,4 @@ The current docsets are as follows:
   - DAO Members `/reference/dao-members/`
 - Docs Development `/dev/`
 
-For more information about `/latest` and `/next` see
-[Airnode/OIS Versioning](/dev/versioning.md).
+For more information about `/latest` and `/next` see [Airnode/OIS Versioning](/dev/versioning.md).

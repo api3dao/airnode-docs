@@ -19,29 +19,15 @@ tags:
 
 # {{$frontmatter.title}}
 
-The
-[airnode-abi](https://github.com/api3dao/airnode/tree/v0.12/packages/airnode-abi)
-package is a unique way to encode and decode parameters for use with Airnode.
-Parameters are provided with encoding types, names and values. The types are
-shortened and grouped with a version as the "header". The name/value pairs are
-then grouped and encoded as the rest of the body.
+The [airnode-abi](https://github.com/api3dao/airnode/tree/v0.12/packages/airnode-abi) package is a unique way to encode and decode parameters for use with Airnode. Parameters are provided with encoding types, names and values. The types are shortened and grouped with a version as the "header". The name/value pairs are then grouped and encoded as the rest of the body.
 
-An advantage of encoding parameters this way is that parameters can be decoded
-natively using the language(s) of the specific blockchain. In the case of EVM
-blockchains, this means that parameters can be encoded as well as decoded in
-Solidity (or Vyper), without any additional requirements.
+An advantage of encoding parameters this way is that parameters can be decoded natively using the language(s) of the specific blockchain. In the case of EVM blockchains, this means that parameters can be encoded as well as decoded in Solidity (or Vyper), without any additional requirements.
 
-You can find additional documentation in
-[Airnode ABI Specifications](/reference/airnode/v0.12/specifications/airnode-abi.md)
-doc.
+You can find additional documentation in [Airnode ABI Specifications](/reference/airnode/v0.12/specifications/airnode-abi.md) doc.
 
 ## Installation
 
-You can install
-[@api3/airnode-abi](https://www.npmjs.com/package/@api3/airnode-abi?activeTab=dependencies)
-with either
-[npm](https://docs.npmjs.com/getting-started/installing-node#install-npm--manage-npm-versions)
-or [Yarn](https://yarnpkg.com/en/docs/install)
+You can install [@api3/airnode-abi](https://www.npmjs.com/package/@api3/airnode-abi?activeTab=dependencies) with either [npm](https://docs.npmjs.com/getting-started/installing-node#install-npm--manage-npm-versions) or [Yarn](https://yarnpkg.com/en/docs/install)
 
 ```sh
 # npm
@@ -57,16 +43,13 @@ yarn add @api3/airnode-abi
 
 Accepts an array of objects with the following required keys:
 
-1. `type` - The full list of accepted types can be found in the
-   [Airnode ABI](/reference/airnode/v0.12/specifications/airnode-abi.md#type-encodings)
-   specifications doc.
+1. `type` - The full list of accepted types can be found in the [Airnode ABI](/reference/airnode/v0.12/specifications/airnode-abi.md#type-encodings) specifications doc.
 
 2. `name`
 
 3. `value`
 
-It is important to note that numeric values (`int256` and `uint256`) should be
-submitted as **strings** in order to preserve precision.
+It is important to note that numeric values (`int256` and `uint256`) should be submitted as **strings** in order to preserve precision.
 
 ```ts
 import { encode } from '@api3/airnode-abi';
@@ -83,11 +66,9 @@ console.log(encodedData);
 
 ## `decode`
 
-Returns an object where the keys are the "names" and the values are the "values"
-from the initial encoding.
+Returns an object where the keys are the "names" and the values are the "values" from the initial encoding.
 
-It is important to note that `int256` and `uint256` will be decoded back to
-strings.
+It is important to note that `int256` and `uint256` will be decoded back to strings.
 
 ```ts
 import { decode } from '@api3/airnode-abi';

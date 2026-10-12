@@ -19,8 +19,7 @@ tags:
 
 # {{$frontmatter.title}}
 
-Be sure to use the correct OIS version for the Airnode version you are
-deploying.
+Be sure to use the correct OIS version for the Airnode version you are deploying.
 
 | Airnode version     | Latest compatible OIS version                |
 | ------------------- | -------------------------------------------- |
@@ -33,10 +32,8 @@ deploying.
 | 0.8.x               | [1.1.2](https://old-docs.api3.org/ois/v1.1/) |
 | 0.2.x through 0.7.x | [1.0.0](https://old-docs.api3.org/ois/v1.0/) |
 
-Documentation for versions `v1.0.0` through `v1.4.0` are available on the
-[legacy documentation site](https://old-docs.api3.org).
+Documentation for versions `v1.0.0` through `v1.4.0` are available on the [legacy documentation site](https://old-docs.api3.org).
 
-See GitHub [releases](https://github.com/api3dao/ois/releases) for more
-information about the changes in each version.
+See GitHub [releases](https://github.com/api3dao/ois/releases) for more information about the changes in each version.
 
 <FlexEndTag/>

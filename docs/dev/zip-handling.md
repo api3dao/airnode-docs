@@ -24,9 +24,7 @@ To facilitate the creation of these zip files, the following script can be run:
 pnpm zip:create
 ```
 
-To ensure that the `config.json` files within these zip files do not get
-out-of-sync with their input `config.json` files, the following script is run as
-part of the pre-push hook (it can also be run independently):
+To ensure that the `config.json` files within these zip files do not get out-of-sync with their input `config.json` files, the following script is run as part of the pre-push hook (it can also be run independently):
 
 ```sh
 pnpm zip:config-check

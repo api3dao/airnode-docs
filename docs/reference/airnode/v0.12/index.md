@@ -19,17 +19,9 @@ tags:
 
 # {{$frontmatter.title}}
 
-Use the contract addresses listed in the tables below to interact with Airnode
-on EVM-compatible blockchains. Additional addresses will be added as contracts
-are deployed, but feel free to
-[submit a GitHub issue](https://github.com/api3dao/airnode/issues) requesting a
-new deployment.
+Use the contract addresses listed in the tables below to interact with Airnode on EVM-compatible blockchains. Additional addresses will be added as contracts are deployed, but feel free to [submit a GitHub issue](https://github.com/api3dao/airnode/issues) requesting a new deployment.
 
-The contract addresses listed below are sourced from the Airnode monorepo
-[airnode-protocol](https://github.com/api3dao/airnode/tree/v0.12/packages/airnode-protocol)
-and can be found in its
-[deployments](https://github.com/api3dao/airnode/tree/v0.12/packages/airnode-protocol/deployments)
-directory.
+The contract addresses listed below are sourced from the Airnode monorepo [airnode-protocol](https://github.com/api3dao/airnode/tree/v0.12/packages/airnode-protocol) and can be found in its [deployments](https://github.com/api3dao/airnode/tree/v0.12/packages/airnode-protocol/deployments) directory.
 
 ## AirnodeRrpV0
 

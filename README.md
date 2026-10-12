@@ -1,15 +1,10 @@
 # API3 Airnode Technical Documentation
 
-The Airnode technical documentation is maintained by the core technical team.
-Please feel free to create
-[issues](https://github.com/api3dao/airnode-docs/issues) for discussions,
-proposals, additions, and changes in the repo `airnode-docs`.
+The Airnode technical documentation is maintained by the core technical team. Please feel free to create [issues](https://github.com/api3dao/airnode-docs/issues) for discussions, proposals, additions, and changes in the repo `airnode-docs`.
 
 ## VitePress
 
-The technical documentation has moved from
-[VuePress](https://vuepress.vuejs.org) to
-[VitePress](https://vitepress.vuejs.org).
+The technical documentation has moved from [VuePress](https://vuepress.vuejs.org) to [VitePress](https://vitepress.vuejs.org).
 
 - `airnode-docs`: uses VitePress
 - `old-api3-docs`: uses VuePress
@@ -25,24 +20,19 @@ Firebase is used to host the `airnode-docs` technical documentation.
 
 ### Previews
 
-Additionally each PR has its own Firebase preview site. The URL will be
-available in the PR's comments.
+Additionally each PR has its own Firebase preview site. The URL will be available in the PR's comments.
 
 ## Making a Contribution
 
-Please see [CONTRIBUTING.md](CONTRIBUTING.md) for details on how to make a
-contribution.
+Please see [CONTRIBUTING.md](CONTRIBUTING.md) for details on how to make a contribution.
 
 ## Legacy documentation
 
-The original documentation for the repo `api3-docs` is now accessible via
-https://old-docs.api3.org and is still hosted using `gh-pages`.
+The original documentation for the repo `api3-docs` is now accessible via https://old-docs.api3.org and is still hosted using `gh-pages`.
 
 - DNS: http://old-docs.api3.org
 - Hosted with GitHub: https://api3dao.github.io/api3-docs
 
 ## /dev/ docset
 
-Use https://docs.api3.org/dev/ to learn more about how the `airnode-docs`
-documentation is managed. For the legacy documentation use
-https://old-docs.api3.org/dev/.
+Use https://docs.api3.org/dev/ to learn more about how the `airnode-docs` documentation is managed. For the legacy documentation use https://old-docs.api3.org/dev/.
