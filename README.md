@@ -1,5 +1,7 @@
 # API3 Airnode Technical Documentation
 
+> **Airnode and this documentation are deprecated.** Airnode's successors are [AirnodeHub](https://airnodehub.api3.org), where API providers serve their APIs with signed responses, and [signed-api](https://github.com/api3dao/signed-api), the Airnode feed and Signed API services that push signed data to API3 data feeds.
+
 The Airnode technical documentation is maintained by the core technical team. Please feel free to create [issues](https://github.com/api3dao/airnode-docs/issues) for discussions, proposals, additions, and changes in the repo `airnode-docs`.
 
 ## VitePress
